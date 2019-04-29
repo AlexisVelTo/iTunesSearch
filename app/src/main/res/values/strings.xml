@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">iTunesSearch</string>
+    <string name="app_name">iTunes Search</string>
+    <string name="explicative_text">Busca tus canciones y artistas favoritos</string>
+    <string name="error_text">Error, por favor intente denuevo</string>
 </resources>
