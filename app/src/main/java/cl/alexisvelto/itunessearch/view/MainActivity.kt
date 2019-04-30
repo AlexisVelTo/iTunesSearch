@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         mSearchView.maxWidth = Integer.MAX_VALUE
         mSearchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                mainViewModel.loagSongs("/search?term=$query&limit=20")
+                mainViewModel.loadSongs(query!!)
                 return false
             }
             override fun onQueryTextChange(newText: String?): Boolean {

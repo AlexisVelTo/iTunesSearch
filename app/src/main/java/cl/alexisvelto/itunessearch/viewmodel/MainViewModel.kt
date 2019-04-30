@@ -18,9 +18,9 @@ class MainViewModel (application: Application): AndroidViewModel(application) {
     val songs = MutableLiveData<ArrayList<Song>>()
     var isLoading = MutableLiveData<Boolean>()
 
-    fun loagSongs(query:String){
+    fun loadSongs(query:String){
         isLoading.value = true
-        songRepository.getSongs(query,songs).subscribeOn(Schedulers.newThread())
+        songRepository.getSongs("/search?term=$query&mediaType=music&limit=20").subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object: DisposableObserver<ArrayList<Song>>(){
                 override fun onComplete() {
@@ -32,6 +32,7 @@ class MainViewModel (application: Application): AndroidViewModel(application) {
                 override fun onError(e: Throwable) {
                     Log.e("SONG_SEARCHER", e.message)
                     Toast.makeText(context, context.getString(R.string.error_text), Toast.LENGTH_LONG).show()
+                    isLoading.value = false
                 }
             })
     }

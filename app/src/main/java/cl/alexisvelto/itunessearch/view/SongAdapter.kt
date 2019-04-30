@@ -36,6 +36,7 @@ class SongAdapter(context:Context) : RecyclerView.Adapter<SongAdapter.SongViewHo
         val song = songList[position]
         holder.songName.text = song.songName
         holder.songArtist.text = song.artistName
+        holder.album.text = song.collectionName
         Picasso.get().load(song.collectionImage).into(holder.albumImage)
 
     }
@@ -44,6 +45,7 @@ class SongAdapter(context:Context) : RecyclerView.Adapter<SongAdapter.SongViewHo
         var albumImage: ImageView = itemView.findViewById(R.id.imageViewSongAlbum)
         var songName: TextView = itemView.findViewById(R.id.textViewSongName)
         var songArtist: TextView = itemView.findViewById(R.id.textViewSongArtist)
+        var album: TextView = itemView.findViewById(R.id.textViewAlbum)
     }
 
 }

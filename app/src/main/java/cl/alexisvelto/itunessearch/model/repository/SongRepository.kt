@@ -20,7 +20,7 @@ class SongRepository private constructor(context: Context){
     var context = context
     companion object : SingletonHolder<SongRepository, Context>(::SongRepository)
 
-    fun getSongs(query:String, msongs:MutableLiveData<ArrayList<Song>>): Observable<ArrayList<Song>> {
+    fun getSongs(query:String): Observable<ArrayList<Song>> {
        return Observable.fromCallable {
             val retrofit1 = Retrofit.Builder()
                 .baseUrl("http://itunes.apple.com")
@@ -31,11 +31,9 @@ class SongRepository private constructor(context: Context){
             val jsonCall = service1.getJson(query)
             var response = jsonCall.execute()
             var jsonarray = response.body()?.getAsJsonArray("results")
-            println(response.code())
-            println(response.body())
             var songs = ArrayList<Song>()
             jsonarray?.forEach {
-                songs.add(JsonFormatter.format(it))
+                songs.add(JsonFormatter.format(it,context))
             }
             return@fromCallable songs
         }

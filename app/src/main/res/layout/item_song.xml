@@ -16,19 +16,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
             <ImageView android:layout_width="100dp" android:layout_height="100dp"
-            android:id="@+id/imageViewSongAlbum"
+                       android:id="@+id/imageViewSongAlbum"
                        app:layout_constraintLeft_toLeftOf="parent"
                        app:layout_constraintTop_toTopOf="parent"
                        app:layout_constraintBottom_toBottomOf="parent"
-                       android:layout_margin="@dimen/margin"
-            />
+                       android:layout_margin="@dimen/margin"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:id="@+id/textViewSongTitle"
                       android:layout_margin="@dimen/margin"
-                      android:text="Song: "
+                      android:text="@string/song_title"
                       app:layout_constraintLeft_toRightOf="@id/imageViewSongAlbum"
                       app:layout_constraintTop_toTopOf="parent"/>
             <TextView
@@ -39,13 +37,14 @@
                     android:layout_margin="@dimen/margin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name" tools:ignore="MissingConstraints"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:id="@+id/textViewArtistTitle"
-                      app:layout_constraintTop_toBottomOf="@id/textViewSongTitle"
-                      app:layout_constraintLeft_toRightOf="@id/imageViewSongAlbum"
-                      android:layout_margin="@dimen/margin"
-                      android:text="Artist: "/>
+                    android:text="@string/song_placeholder" tools:ignore="MissingConstraints"/>
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:id="@+id/textViewArtistTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSongTitle"
+                    app:layout_constraintLeft_toRightOf="@id/imageViewSongAlbum"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/artist_title"/>
             <TextView
                     android:id="@+id/textViewSongArtist"
                     app:layout_constraintTop_toBottomOf="@+id/textViewSongName"
@@ -54,7 +53,23 @@
                     android:layout_margin="@dimen/margin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Artist"/>
+                    android:text="@string/artist_placeholder"/>
+            <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:id="@+id/textViewAlbumTitle"
+                    app:layout_constraintTop_toBottomOf="@id/textViewArtistTitle"
+                    app:layout_constraintLeft_toRightOf="@id/imageViewSongAlbum"
+                    android:layout_margin="@dimen/margin"
+                    android:text="@string/album_title"/>
+            <TextView
+                    android:id="@+id/textViewAlbum"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewSongArtist"
+                    app:layout_constraintLeft_toRightOf="@id/textViewArtistTitle"
+                    android:layout_marginTop="@dimen/margin"
+                    android:layout_margin="@dimen/margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/album_placeholder"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

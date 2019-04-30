@@ -2,4 +2,12 @@
     <string name="app_name">iTunes Search</string>
     <string name="explicative_text">Busca tus canciones y artistas favoritos</string>
     <string name="error_text">Error, por favor intente denuevo</string>
+    <string name="song_title">Cancion: </string>
+    <string name="artist_title">Artista: </string>
+    <string name="album_title">Album: </string>
+
+    <string name="song_placeholder">Cancion</string>
+    <string name="artist_placeholder">Artista</string>
+    <string name="album_placeholder">Album</string>
+
 </resources>

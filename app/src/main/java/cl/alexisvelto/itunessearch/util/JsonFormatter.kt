@@ -1,16 +1,19 @@
 package cl.alexisvelto.songfinder.util
 
+import android.content.Context
+import cl.alexisvelto.itunessearch.R
 import cl.alexisvelto.itunessearch.model.Song
 import com.google.gson.JsonElement
 
 class JsonFormatter {
     companion object {
-        fun format(jsonElement: JsonElement): Song {
-            var songName = "Song name"
-            var collectionName = "Collection name"
+        fun format(jsonElement: JsonElement,context:Context): Song {
+            var songName = context.getString(R.string.song_placeholder)
+            var collectionName = context.getString(R.string.album_placeholder)
+            var artistName = context.getString(R.string.artist_placeholder)
+
             var collectionImage = "http://i.imgur.com/DvpvklR.png"
             var collectionId = ""
-            var artistName = "Artist name"
 
             if (jsonElement.asJsonObject.has("trackName")) {
                 songName = jsonElement.asJsonObject.get("trackName").asString
